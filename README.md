@@ -1,11 +1,11 @@
 # LAMP Installation With Joomla Front End
 This repository contains a dockerfile that will create an image with a LA[M]P backend and Joomla front end. This
 build uses the following infrastructure:
- L: Ubuntu 16.04 Stable
- A: Apache 2 - Latest
- M: No MySql installation with this, I suggest following the instructions below for the MySql portion
- P: PHP 7 - Latest
- Joomla: 3.5.1
+- L: Ubuntu 16.04 Stable
+- A: Apache 2 - Latest
+- M: No MySql installation with this, I suggest following the instructions below for the MySql portion
+- P: PHP 7 - Latest
+- Joomla: 3.5.1
 
 # Installation
 1. Copy the repo in a local directory.
@@ -13,10 +13,10 @@ build uses the following infrastructure:
 3. Once built, run "docker run -p 80:443 -d --name <container name> <container id>"
 
 # Gather your Docker-machine IP
-Depending on what environment you are running, you will run something like the following.
-Note: Default is the typical env running if you have not set up something specific.
+- Depending on what environment you are running, you will run something like the following.
+<br>Note: Default is the typical env running if you have not set up something specific.
 
-Run "docker-machine ip default"
+1. Run "docker-machine ip default"
 
 You should then be able to visit your Joomla Instance by going to the url:
 http://<docker-machine env ip>/:80
@@ -28,7 +28,7 @@ up and running by that point, with knowledge of its IP and the database that you
 # MySql Instructions
 
 1. Build the MySql Image from DockerHub, this also runs the container.
-      "docker run --name <image_name> -e MYSQL_ROOT_PASSWORD=<root password> -d  -p 3306:3306 mysql:latest"
+- "docker run --name <image_name> -e MYSQL_ROOT_PASSWORD=<root password> -d  -p 3306:3306 mysql:latest"
 
 You are essentially building the image from an established Dockerfile that lives within Dockerhub. This established
 image has the appropriate code to not only create the Docker image, but also initialize a container based on
